@@ -50,7 +50,7 @@ const AppLayout = () => {
   });
 
   return (
-    <>
+    <div className="bg-slate-100">
       <Provider store={store}>
         <UserContext.Provider
           value={{
@@ -64,7 +64,7 @@ const AppLayout = () => {
           <Footer />
         </UserContext.Provider>
       </Provider>
-    </>
+    </div>
   );
 };
 

@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../config";
 import useRestaurant from "../utils/useRestaurant";
-import Shimmer from "./Shimmer";
+import MenuShimmer from "./MenuShimmer";
 import { addItem, clearCart, removeItem } from "../utils/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const RestaurantMenu = () => {
+  // const [addbtn, setAddBtn] = useState(false);
   const cartItems = useSelector((store) => store.cart.items);
   const { resId } = useParams();
 
@@ -18,25 +19,26 @@ const RestaurantMenu = () => {
   const addFoodItem = (item) => {
     dispatch(addItem(item));
   };
-
   const removeItem = (item) => {
     dispatch(removeItem(item));
   };
 
   return !restaurant ? (
-    <Shimmer />
+    <MenuShimmer />
   ) : (
-    <div className="">
-      <div className="flex align-center justify-around bg-slate-50 m-2">
-        <div className="flex">
+    <div className="max-w-screen-md min-h-[90%] mt-0 mx-auto my-auto mb-0">
+      <div className="flex justify-between px-4 py-4 pt-9 pb-9 border-solid border-b-2">
+        <div className="flex justify-between items-center">
           <img
             className="h-40"
             src={
               IMG_CDN_URL + restaurant.cards[0].card.card.info.cloudinaryImageId
             }
           />
-          <div className="align-center justify-around">
-            <h1>{restaurant.cards[0].card.card.info.name}</h1>
+          <div className="m-5">
+            <h1 className="font-bold text-2xl">
+              {restaurant.cards[0].card.card.info.name}
+            </h1>
             <p>{restaurant.cards[0].card.card.info.cuisines.join(", ")}</p>
             <div className="flex">
               <div>
@@ -59,46 +61,52 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
-        <div className="restaurantmenu-offer">
+        {/* <div className="restaurantmenu-offer">
           <div>
             <h3>OFFER</h3>
             {restaurant?.cards[0].card.card.info.aggregatedDiscountInfo?.descriptionList.map(
               (discount, index) => (
                 <p key={index}>
-                  {/* <UilTagAlt height="16px" /> &nbsp; */}
+                  <UilTagAlt height="16px" /> &nbsp;
                   {discount?.meta}
                 </p>
               )
             )}
           </div>
-        </div>
+        </div> */}
       </div>
-      <div className="grid justify-center">
+      <div className="">
         {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map(
           (item) => (
-            <div className="flex">
-              <div key={item.card.info.id}>{item.card.info.name}</div>
-              <div className="">
+            <div
+              key={item.card.info.id}
+              className="flex align-center justify-between border-b-2 mt-2"
+            >
+              <div className=" m-3">
+                <h1 className="text-lg font-bold">{item.card.info.name}</h1>
+                <p>
+                  ₹
+                  {item.card.info.price / 100 ||
+                    item.card.info.defaultPrice / 100}
+                </p>
+                <div className="text-slate-600 text-sm">
+                  {/* {item.card.info.description} */}
+                </div>
+              </div>
+              <div className="grid align-center justify-center">
                 <img
                   className="w-29 h-28 rounded-lg"
                   src={IMG_CDN_URL + item.card.info.imageId}
                 />
-                <button className="">
-                  <div
-                    onClick={() =>
-                      cartItems[item.card.info?.id]?.length &&
-                      removeItem(item.card.info)
-                    }
+                <div className="flex justify-center m-1">
+                  <button
+                    data-testId="addbtn"
+                    onClick={() => addFoodItem(item)}
+                    className="w-20 h-8 border border-slate-400 rounded text-green-600 "
                   >
-                    <span>-</span>
-                  </div>
-                  <div>
-                    <span>{cartItems[item.card.info]?.length || 0}</span>
-                  </div>
-                  <div onClick={() => addFoodItem(item.card.info)}>
-                    <span>+</span>
-                  </div>
-                </button>
+                    Add
+                  </button>
+                </div>
               </div>
             </div>
           )

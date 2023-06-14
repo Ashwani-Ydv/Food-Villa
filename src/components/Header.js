@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import foodvilla from "../assets/img/foodvilla.png";
 import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
+import { CiDiscount1 } from "react-icons/ci";
+import { FiUser, FiShoppingCart } from "react-icons/fi";
+import { IconContext } from "react-icons";
 
 const Title = () => (
   <a href="/">
@@ -17,20 +20,51 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="flex justify-between bg-pink-50 shadow-lg sm:bg-blue-50 md:bg-yellow-50">
+    <div className="flex justify-between shadow-lg bg-white">
       <Title />
-      <div className="nav-items">
-        <ul className="flex py-10">
-          <Link to="/cart">
-            <li className="px-2">Cart {cartItems.length} items</li>
-          </Link>
+      <div className="flex items-center">
+        <ul className="flex justify-between">
+          <li className="px-2 ml-4">
+            <link
+              type="image/png"
+              sizes="16x16"
+              rel="icon"
+              href=".../icons8-discount-16.png"
+            />
+            <div className="flex">
+              <IconContext.Provider value={{ size: "1.5em" }}>
+                <div className="mr-2">
+                  <CiDiscount1 />
+                </div>
+              </IconContext.Provider>
+              Offers
+            </div>
+          </li>
+
+          <li className="px-2 ml-4">
+            <Link to={"/cart"}>
+              <div className="flex">
+                <IconContext.Provider value={{ size: "1.5em" }}>
+                  <div className="mr-2">
+                    <FiShoppingCart />
+                  </div>
+                </IconContext.Provider>
+                <p data-testid="cart">Cart -{cartItems.length}</p>
+              </div>
+            </Link>
+          </li>
+          <li className="px-2 ml-4">
+            <div className="flex">
+              <IconContext.Provider value={{ size: "1.5em" }}>
+                <div className="mr-2">
+                  <FiUser />
+                </div>
+              </IconContext.Provider>
+              Ashwani
+            </div>
+          </li>
         </ul>
       </div>
-      {isLoggedIn ? (
-        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
-      ) : (
-        <button onClick={() => setIsLoggedIn(true)}>Login</button>
-      )}
     </div>
   );
 };
