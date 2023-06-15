@@ -9,7 +9,7 @@ import { IconContext } from "react-icons";
 
 const Title = () => (
   <a href="/">
-    <img className="h-28 p-2" alt="food villa" src={foodvilla} />
+    <img className="h-20 p-2" alt="food villa" src={foodvilla} />
   </a>
 );
 const Header = () => {
@@ -20,7 +20,7 @@ const Header = () => {
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
-    <div className="flex justify-between shadow-lg bg-white">
+    <div className="flex justify-between shadow-lg bg-white fixed top-0 w-full h-88; z-1">
       <Title />
       <div className="flex items-center">
         <ul className="flex justify-between">

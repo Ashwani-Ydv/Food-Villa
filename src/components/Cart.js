@@ -27,7 +27,7 @@ const Cart = () => {
     <div>
       {cartItems.length ? (
         <button
-          className="bg-red-300 p-1 mt-2 mb-2 font-bold border border-black-100 text-lg rounded-lg"
+          className="bg-red-300 p-1 mt-24 mb-2 font-bold border border-black-100 text-lg rounded-lg"
           onClick={() => handleClearCart()}
         >
           Clear Cart
@@ -74,7 +74,7 @@ const Cart = () => {
           </button>
         </div>
       ) : (
-        <div className="grid justify-center m-5">
+        <div className="grid justify-center mt-20">
           <img
             src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
             alt="empty cart"

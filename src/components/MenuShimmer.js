@@ -1,7 +1,7 @@
 const MenuShimmer = () => {
   return (
     <>
-      <div className="w-70 bg-gray-300 h-50"></div>
+      <div className="w-70 bg-gray-300 h-50 mt-20"></div>
       <div className="max-w-screen-md  mt-0 mx-auto my-auto mb-0">
         {Array(10)
           .fill("")

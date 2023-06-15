@@ -26,7 +26,7 @@ const RestaurantMenu = () => {
   return !restaurant ? (
     <MenuShimmer />
   ) : (
-    <div className="max-w-screen-md min-h-[90%] mt-0 mx-auto my-auto mb-0">
+    <div className="max-w-screen-md max-h-fit mt-20 mx-auto my-auto mb-0">
       <div className="flex justify-between px-4 py-4 pt-9 pb-9 border-solid border-b-2">
         <div className="flex justify-between items-center">
           <img
@@ -100,7 +100,6 @@ const RestaurantMenu = () => {
                 />
                 <div className="flex justify-center m-1">
                   <button
-                    data-testId="addbtn"
                     onClick={() => addFoodItem(item)}
                     className="w-20 h-8 border border-slate-400 rounded text-green-600 "
                   >

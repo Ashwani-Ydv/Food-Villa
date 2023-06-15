@@ -24,7 +24,9 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+      // "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
       // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
     );
     const json = await data.json();
@@ -36,28 +38,31 @@ const Body = () => {
     <Shimmer />
   ) : (
     <>
-      <div className="mt-1 flex justify-center mr-2">
-        <input
-          type="text"
-          className="m-1 bg-slate-100 p-2 rounded-md focus-within:purple border-slate-500 border"
-          placeholder="Search"
-          value={searchText}
-          onChange={(e) => {
-            setSearchText(e.target.value); //e.target.value=>whatever you write in input
-          }}
-        />
-        <button
-          className="bg-slate-500 text-white rounded-md m-1 w-20"
-          onClick={() => {
-            //need to filter the data
-            const data = filterData(searchText, allRestaurants);
-            // update the state - restaurants
-            setFilteredRestaurants(data);
-          }}
-        >
-          Search
-        </button>
+      <div className="mt-20 flex justify-center">
+        <div className=" mt-3 flex justify-center">
+          <input
+            type="text"
+            className="m-1 bg-slate-100 p-2 rounded-md focus-within:purple border-slate-500 border"
+            placeholder="Search"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value); //e.target.value=>whatever you write in input
+            }}
+          />
+          <button
+            className="bg-slate-500 text-white rounded-md m-1 w-20"
+            onClick={() => {
+              //need to filter the data
+              const data = filterData(searchText, allRestaurants);
+              // update the state - restaurants
+              setFilteredRestaurants(data);
+            }}
+          >
+            Search
+          </button>
+        </div>
       </div>
+
       <div className="flex w-full flex-wrap justify-center">
         {filteredRestaurants.map((restaurant) => {
           return (
