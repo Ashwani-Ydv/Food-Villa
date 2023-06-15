@@ -2,6 +2,7 @@
   "name": "y",
   "version": "1.0.0",
   "description": "this is live course",
+  "proxy":"https://swiggy.com",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
