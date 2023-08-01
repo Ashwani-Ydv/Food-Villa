@@ -30,8 +30,19 @@ const Body = () => {
       // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
     );
     const json = await data.json();
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    console.log("json", json);
+    setAllRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    // setListOfRestraunt(
+    //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
+    // setFilteredRestaurant(
+    //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    // );
   }
   if (!allRestaurants) return null;
   return allRestaurants?.length === 0 ? (
@@ -67,10 +78,10 @@ const Body = () => {
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
-              to={"/restaurant/" + restaurant.data.id}
-              key={restaurant.data.id}
+              to={"/restaurant/" + restaurant?.info.id}
+              key={restaurant?.info.id}
             >
-              <RestrauntCard {...restaurant.data} />
+              <RestrauntCard {...restaurant?.info} />
             </Link>
           );
         })}
