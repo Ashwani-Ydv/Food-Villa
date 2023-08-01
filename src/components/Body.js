@@ -18,9 +18,6 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   // const { user, setUser } = useContext(UserContext);
 
-  console.log(searchText);
-  console.log(filteredRestaurants);
-
   useEffect(() => {
     getRestaurants();
   }, []);
