@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 function filterData(searchText, restaurants) {
   const filterData = restaurants.filter((restaurant) =>
-    restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+    restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -17,6 +17,9 @@ const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   // const { user, setUser } = useContext(UserContext);
+
+  console.log(searchText);
+  console.log(filteredRestaurants);
 
   useEffect(() => {
     getRestaurants();
@@ -30,7 +33,6 @@ const Body = () => {
       // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&offset=${offset}&sortBy=${sortBy}&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING"
     );
     const json = await data.json();
-    console.log("json", json);
     setAllRestaurants(
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );

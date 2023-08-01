@@ -55737,7 +55737,7 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 // import UserContext from "../utils/UserContext";
 function filterData(searchText, restaurants) {
-    const filterData = restaurants.filter((restaurant)=>restaurant?.data?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    const filterData = restaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
     return filterData;
 }
 const Body = ()=>{
@@ -55746,6 +55746,8 @@ const Body = ()=>{
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     // const { user, setUser } = useContext(UserContext);
+    console.log(searchText);
+    console.log(filteredRestaurants);
     (0, _react.useEffect)(()=>{
         getRestaurants();
     }, []);
@@ -55753,7 +55755,6 @@ const Body = ()=>{
         const data = await fetch(// "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
         "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log("json", json);
         setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
         setFilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // setListOfRestraunt(
@@ -55766,7 +55767,7 @@ const Body = ()=>{
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 42,
+        lineNumber: 43,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -55785,7 +55786,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 45,
+                            lineNumber: 46,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55799,18 +55800,18 @@ const Body = ()=>{
                             children: "Search"
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 48,
+                            lineNumber: 49,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 44,
+                    lineNumber: 45,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 43,
+                lineNumber: 44,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55822,18 +55823,18 @@ const Body = ()=>{
                             ...restaurant?.info
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 62,
+                            lineNumber: 63,
                             columnNumber: 15
                         }, undefined)
                     }, restaurant?.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 16
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 59,
+                lineNumber: 60,
                 columnNumber: 7
             }, undefined)
         ]
