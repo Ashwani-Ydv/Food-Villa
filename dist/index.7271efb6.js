@@ -55746,8 +55746,6 @@ const Body = ()=>{
     const [allRestaurants, setAllRestaurants] = (0, _react.useState)([]);
     const [filteredRestaurants, setFilteredRestaurants] = (0, _react.useState)([]);
     // const { user, setUser } = useContext(UserContext);
-    console.log(searchText);
-    console.log(filteredRestaurants);
     (0, _react.useEffect)(()=>{
         getRestaurants();
     }, []);
@@ -55755,8 +55753,8 @@ const Body = ()=>{
         const data = await fetch(// "https://corsanywhere.herokuapp.com/https://www.swiggy.com/dapi/restaurants/list/v5?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
         "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        setAllRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     // setListOfRestraunt(
     //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     // );
@@ -55767,7 +55765,7 @@ const Body = ()=>{
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 43,
+        lineNumber: 41,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
@@ -55786,7 +55784,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 46,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55800,18 +55798,18 @@ const Body = ()=>{
                             children: "Search"
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 49,
+                            lineNumber: 47,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 45,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 44,
+                lineNumber: 42,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55823,18 +55821,18 @@ const Body = ()=>{
                             ...restaurant?.info
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 63,
+                            lineNumber: 61,
                             columnNumber: 15
                         }, undefined)
                     }, restaurant?.info.id, false, {
                         fileName: "src/components/Body.js",
-                        lineNumber: 62,
+                        lineNumber: 60,
                         columnNumber: 16
                     }, undefined);
                 })
             }, void 0, false, {
                 fileName: "src/components/Body.js",
-                lineNumber: 60,
+                lineNumber: 58,
                 columnNumber: 7
             }, undefined)
         ]
