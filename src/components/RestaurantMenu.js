@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
               {restaurant.cards[0].card.card.info.name}
             </h1>
             <p>{restaurant.cards[0].card.card.info.cuisines.join(", ")}</p>
-            <div className="flex">
+            <div className="flex my-2">
               <div>
                 {restaurant.cards[0].card.card.info.avgRating >= 4 ? (
                   <div className="bg-green-400 text-xs p-1.5">
@@ -52,7 +52,7 @@ const RestaurantMenu = () => {
                   </div>
                 )}
               </div>
-              <div>
+              <div className="mx-1">
                 <h3>{restaurant.cards[0].card.card.info.sla.slaString}</h3>
               </div>
               <div>
@@ -61,19 +61,6 @@ const RestaurantMenu = () => {
             </div>
           </div>
         </div>
-        {/* <div className="restaurantmenu-offer">
-          <div>
-            <h3>OFFER</h3>
-            {restaurant?.cards[0].card.card.info.aggregatedDiscountInfo?.descriptionList.map(
-              (discount, index) => (
-                <p key={index}>
-                  <UilTagAlt height="16px" /> &nbsp;
-                  {discount?.meta}
-                </p>
-              )
-            )}
-          </div>
-        </div> */}
       </div>
       <div className="">
         {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card?.itemCards?.map(
@@ -82,16 +69,14 @@ const RestaurantMenu = () => {
               key={item.card.info.id}
               className="flex align-center justify-between border-b-2 mt-2"
             >
-              <div className=" m-3">
+              <div className="m-3">
                 <h1 className="text-lg font-bold">{item.card.info.name}</h1>
                 <p>
                   ₹
                   {item.card.info.price / 100 ||
                     item.card.info.defaultPrice / 100}
                 </p>
-                <div className="text-slate-600 text-sm">
-                  {/* {item.card.info.description} */}
-                </div>
+                <div className="text-slate-600 text-sm"></div>
               </div>
               <div className="grid align-center justify-center">
                 <img
