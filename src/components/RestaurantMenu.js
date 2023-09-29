@@ -22,7 +22,6 @@ const RestaurantMenu = () => {
   const removeItem = (item) => {
     dispatch(removeItem(item));
   };
-
   return !restaurant ? (
     <MenuShimmer />
   ) : (
@@ -84,12 +83,20 @@ const RestaurantMenu = () => {
                   src={IMG_CDN_URL + item.card.info.imageId}
                 />
                 <div className="flex justify-center m-1">
-                  <button
-                    onClick={() => addFoodItem(item)}
-                    className="w-20 h-8 border border-slate-400 rounded text-green-600 "
-                  >
-                    Add
-                  </button>
+                  {!item ? (
+                    <div>
+                      <button>-</button>
+                      {item}
+                      <button>+</button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => addFoodItem(item)}
+                      className="w-20 h-8 border border-slate-400 rounded text-green-600"
+                    >
+                      Add
+                    </button>
+                  )}
                 </div>
               </div>
             </div>

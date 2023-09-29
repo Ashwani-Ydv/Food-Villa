@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import FoodItem from "./FoodItem";
 import { IMG_CDN_URL } from "../config";
 import { addItem, clearCart, removeItem } from "../utils/cartSlice";
@@ -39,13 +40,13 @@ const Cart = () => {
       {cartItems.length ? (
         <div className="flex-col">
           <div className="flex">
-            <p>Total</p>-<p>{totalPrice}.00</p>
+            <p>Total</p>-<p>{totalPrice}</p>
           </div>
           <div className="flex">
-            <p>Delivery Charges</p>-<p>40.00</p>
+            <p>Delivery Charges</p>-<p>40</p>
           </div>
           <div className="flex">
-            <p>Total Charges</p>-<p>{totalPrice + 40.0}.00</p>
+            <p>Total Charges</p>-<p>{totalPrice + 40}</p>
           </div>
         </div>
       ) : (
@@ -81,7 +82,11 @@ const Cart = () => {
           />
           <h3 className="text-center">Your cart is empty</h3>
           <p className="text-center">
-            You can go to home to view more restaurants
+            You can go to &nbsp;
+            <Link className="text-blue-700" to="/">
+              home
+            </Link>{" "}
+            to view more restaurants
           </p>
         </div>
       )}
