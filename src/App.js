@@ -59,9 +59,13 @@ const AppLayout = () => {
           }}
         >
           <Header />
-          {/* <Body /> */}
-          <Outlet />
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <div className="flex-grow">
+              {/* <Body /> */}
+              <Outlet />
+            </div>
+            <Footer />
+          </div>
         </UserContext.Provider>
       </Provider>
     </div>
