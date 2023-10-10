@@ -36,54 +36,50 @@ const Body = () => {
     setFilteredRestaurants(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    // setListOfRestraunt(
-    //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
-    // setFilteredRestaurant(
-    //   json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    // );
   }
   if (!allRestaurants) return null;
   return allRestaurants?.length === 0 ? (
     <Shimmer />
   ) : (
     <>
-      <div className="mt-20 flex justify-center">
+      <div className="mt-20 flex flex-col items-center space-y-6">
         <div className=" mt-3 flex justify-center">
           <input
             type="text"
-            className="m-1 bg-slate-100 p-2 rounded-md focus-within:purple border-slate-500 border"
-            placeholder="Search"
+            className="flex-grow bg-transparent outline-none p-2 mr-2 rounded-md border border-gray-300 focus:border-purple-500"
+            placeholder="Search for restaurants..."
             value={searchText}
             onChange={(e) => {
-              setSearchText(e.target.value); //e.target.value=>whatever you write in input
+              setSearchText(e.target.value);
+              const data = filterData(searchText, allRestaurants);
+              setFilteredRestaurants(data);
             }}
           />
           <button
-            className="bg-slate-500 text-white rounded-md m-1 w-20"
+            className="bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded-md transition duration-200"
             onClick={() => {
-              //need to filter the data
               const data = filterData(searchText, allRestaurants);
-              // update the state - restaurants
               setFilteredRestaurants(data);
             }}
           >
             Search
           </button>
         </div>
-      </div>
 
-      <div className="flex w-full flex-wrap justify-center">
-        {filteredRestaurants.map((restaurant) => {
-          return (
-            <Link
-              to={"/restaurant/" + restaurant?.info.id}
-              key={restaurant?.info.id}
-            >
-              <RestrauntCard {...restaurant?.info} />
-            </Link>
-          );
-        })}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 w-full px-4">
+          {filteredRestaurants.map((restaurant) => {
+            return (
+              <Link
+                to={"/restaurant/" + restaurant?.info.id}
+                key={restaurant?.info.id}
+              >
+                <div className="transform hover:scale-105 transition-transform duration-200">
+                  <RestrauntCard {...restaurant?.info} />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
       </div>
     </>
   );

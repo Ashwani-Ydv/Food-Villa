@@ -4,12 +4,11 @@ import UserContext from "../utils/UserContext";
 const Footer = () => {
   const { user } = useContext(UserContext);
   return (
-    <footer className="h-16 bg-gray-800 text-white flex items-center justify-center">
-      <div
-      // className=" w-full bottom--1 bg-slate-600 flex justify-center text-white"
-      >
-        <h5 className="h-15 flex justify-center items-center">
-          This site is developed by {user.name}
+    <footer className="h-16 bg-gray-900 text-white flex items-center justify-center border-t border-gray-700">
+      <div>
+        <h5 className="text-lg font-semibold">
+          This site is developed by{" "}
+          <span className="text-purple-400"> {user.name}</span>
         </h5>
       </div>
     </footer>

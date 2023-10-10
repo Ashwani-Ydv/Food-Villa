@@ -1,6 +1,5 @@
 import { IMG_CDN_URL } from "../config";
 import { useContext } from "react";
-// import UserContext from "../utils/UserContext";
 
 const RestrauntCard = ({
   name,
@@ -10,7 +9,6 @@ const RestrauntCard = ({
   slaString,
   costForTwoString,
 }) => {
-  // const { user } = useContext(UserContext);
   return (
     <div className="w-64 h-auto m-8 p-2 hover:shadow-2xl align-between">
       <img src={IMG_CDN_URL + cloudinaryImageId} />
@@ -20,9 +18,9 @@ const RestrauntCard = ({
       </div>
       <div className="flex justify-between mt-5">
         {avgRating >= 4 ? (
-          <div className="bg-green-400 text-xs p-1.5">{`☆ ${avgRating}`}</div>
+          <div className="bg-green-400 text-xs p-1.5 rounded-sm">{`☆ ${avgRating}`}</div>
         ) : (
-          <div className="bg-orange-600 text-xs p-1.5">{`☆ ${avgRating}`}</div>
+          <div className="bg-orange-600 text-xs p-1.5 rounded-sm">{`☆ ${avgRating}`}</div>
         )}
         <h3 className="text-xs">{slaString}</h3>
         <h3 className="text-xs">{costForTwoString}</h3>

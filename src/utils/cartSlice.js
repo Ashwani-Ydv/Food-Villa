@@ -5,28 +5,7 @@ const cartSlice = createSlice({
   initialState: {
     items: [],
   },
-  // reducers: {
-  //   addItem: (state, action) => {
-  //     state.items.push(action.payload);
-  //   },
-  //   removeItem: (state, action) => {
-  //     if (items.length > 0) state.items.pop();
-  //   },
-  //   clearCart: (state) => {
-  //     state.items = [];
-  //   },
-  // },
   reducers: {
-    // addItem: (state, action) => {
-    //   const itemIndex = state.items.findIndex(
-    //     (item) => item.id === action.payload.id
-    //   );
-    //   if (itemIndex !== -1) {
-    //     state.items[itemIndex].count += 1;
-    //   } else {
-    //     state.items.push({ id: action.payload.id, count: 1 });
-    //   }
-    // },
     addItem: (state, action) => {
       const itemIndex = state.items.findIndex(
         (item) => item.id === action.payload.id
@@ -34,7 +13,7 @@ const cartSlice = createSlice({
       if (itemIndex !== -1) {
         state.items[itemIndex].count += 1;
       } else {
-        // Add the entire item info and initialize count to 1
+        // Adding the entire item info and initializing count to 1
         state.items.push({ ...action.payload, count: 1 });
       }
     },
