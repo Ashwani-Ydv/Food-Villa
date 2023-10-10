@@ -4,6 +4,30 @@
 
 @tailwind utilities;
 
+@keyframes shimmer {
+  0% {
+    background-position: -300px 0;
+  }
 
+  100% {
+    background-position: 300px 0;
+  }
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, #f3f3f31a, #f3f3f399, #f3f3f31a) 0 0 / 300px 100%;
+  animation: 1.5s infinite shimmer;
+}
+
+.shimmer-content {
+  height: 12px;
+  background-color: #dcdcdc80;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.shimmer-content:last-child {
+  margin-bottom: 0;
+}
 
 /*# sourceMappingURL=index.9e4c6fd2.css.map */
