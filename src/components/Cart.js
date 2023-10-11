@@ -11,7 +11,8 @@ const Cart = () => {
 
   // total price calculation
   let totalPrice = cartItems.reduce((acc, item) => {
-    let price = item.price / 100 || item.defaultPrice / 100;
+    let price =
+      item.count * Math.floor(item.price / 100 || item.defaultPrice / 100);
     return acc + price;
   }, 0);
 
