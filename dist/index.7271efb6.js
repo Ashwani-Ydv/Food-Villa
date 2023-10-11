@@ -27341,7 +27341,7 @@ const Header = ()=>{
     const [isLoggedIn, setIsLoggedIn] = (0, _react.useState)(false);
     const { user  } = (0, _react.useContext)((0, _userContextDefault.default));
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
-    console.log("navber", cartItems);
+    // console.log("navber", cartItems);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "flex justify-between items-center bg-white fixed top-0 w-full h-16 shadow-md z-50",
         children: [
@@ -27349,7 +27349,7 @@ const Header = ()=>{
                 className: "text-2xl font-semibold text-gray-800"
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 20,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27364,7 +27364,7 @@ const Header = ()=>{
                                     className: "w-6 h-6 text-red-500"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 25,
+                                    lineNumber: 27,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27372,13 +27372,13 @@ const Header = ()=>{
                                     children: "Offers"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 26,
+                                    lineNumber: 28,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 24,
+                            lineNumber: 26,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27392,14 +27392,14 @@ const Header = ()=>{
                                         children: cartItems.length
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 31,
+                                        lineNumber: 33,
                                         columnNumber: 40
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _fi.FiShoppingCart), {
                                         className: "w-6 h-6"
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 34,
+                                        lineNumber: 36,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27407,18 +27407,18 @@ const Header = ()=>{
                                         children: "Cart"
                                     }, void 0, false, {
                                         fileName: "src/components/Header.js",
-                                        lineNumber: 35,
+                                        lineNumber: 37,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/Header.js",
-                                lineNumber: 30,
+                                lineNumber: 32,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 29,
+                            lineNumber: 31,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
@@ -27428,7 +27428,7 @@ const Header = ()=>{
                                     className: "w-6 h-6 text-blue-500"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 39,
+                                    lineNumber: 41,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -27436,30 +27436,30 @@ const Header = ()=>{
                                     children: "Ashwani"
                                 }, void 0, false, {
                                     fileName: "src/components/Header.js",
-                                    lineNumber: 40,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/components/Header.js",
-                            lineNumber: 38,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Header.js",
-                    lineNumber: 23,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/components/Header.js",
-                lineNumber: 22,
+                lineNumber: 24,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/Header.js",
-        lineNumber: 19,
+        lineNumber: 21,
         columnNumber: 10
     }, undefined);
 };
@@ -55716,9 +55716,9 @@ const Body = ()=>{
     async function getRestaurants() {
         const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log("data", json);
-        setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // console.log("data", json);
+        setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
