@@ -26,7 +26,7 @@ const Header = () => {
       <Title className="text-2xl font-semibold text-gray-800" />
 
       <div className="flex items-center">
-        <ul className="flex space-x-4 items-center">
+        <ul className="flex space-x-4 items-center mr-2">
           <li className="flex items-center space-x-2">
             <CiDiscount1 className="w-6 h-6 text-red-500" />
             <span className="text-sm font-medium text-gray-800">Offers</span>

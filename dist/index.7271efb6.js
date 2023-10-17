@@ -143,8 +143,8 @@
     }
   }
 })({"1xC6H":[function(require,module,exports) {
-var Refresh = require("ec70680b21fc2dce");
-var ErrorOverlay = require("d6ee5bb2112af59");
+var Refresh = require("48a40b7a2896b90f");
+var ErrorOverlay = require("40e3bb92b9fea59e");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -163,11 +163,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"ec70680b21fc2dce":"786KC","d6ee5bb2112af59":"1dldy"}],"786KC":[function(require,module,exports) {
+},{"48a40b7a2896b90f":"786KC","40e3bb92b9fea59e":"1dldy"}],"786KC":[function(require,module,exports) {
 "use strict";
-module.exports = require("680c289e9a8c1244");
+module.exports = require("a4613e24b54c66c4");
 
-},{"680c289e9a8c1244":"hdge7"}],"hdge7":[function(require,module,exports) {
+},{"a4613e24b54c66c4":"hdge7"}],"hdge7":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -628,7 +628,7 @@ module.exports = require("680c289e9a8c1244");
 })();
 
 },{}],"1dldy":[function(require,module,exports) {
-var process = require("d033894cd2c075a3");
+var process = require("d8177087b066dc50");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2358,7 +2358,7 @@ var process = require("d033894cd2c075a3");
     ]);
 });
 
-},{"d033894cd2c075a3":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"d8177087b066dc50":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -3115,9 +3115,9 @@ $RefreshReg$(_c, "AppLayout");
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./components/Header":"hsJbF","./components/Body":"8yaV8","./components/Footer":"8pPOA","react-router-dom":"9xmpe","./components/RestraurantCard":"7wtFA","./components/About":"9R1Eu","./components/Contact":"cgAOG","./components/RestaurantMenu":"8PuJ6","./components/Cart":"h8J3U","./components/Instamart":"gB4Fs","./components/Profile":"h0rtF","./utils/UserContext":"c5vgB","react-redux":"bdVon","./utils/store":"k2jPV","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
-module.exports = require("c26e7059523d0f40");
+module.exports = require("133b4230c9aaba9a");
 
-},{"c26e7059523d0f40":"48uCM"}],"48uCM":[function(require,module,exports) {
+},{"133b4230c9aaba9a":"48uCM"}],"48uCM":[function(require,module,exports) {
 /**
  * @license React
  * react-jsx-dev-runtime.development.js
@@ -3129,7 +3129,7 @@ module.exports = require("c26e7059523d0f40");
  */ "use strict";
 (function() {
     "use strict";
-    var React = require("249ac7565a191768");
+    var React = require("1196c27e0039b059");
     // ATTENTION
     // When adding new symbols to this file,
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
@@ -3948,11 +3948,11 @@ module.exports = require("c26e7059523d0f40");
     exports.jsxDEV = jsxDEV$1;
 })();
 
-},{"249ac7565a191768":"21dqq"}],"21dqq":[function(require,module,exports) {
+},{"1196c27e0039b059":"21dqq"}],"21dqq":[function(require,module,exports) {
 "use strict";
-module.exports = require("5c2a2ce3b3fe1a03");
+module.exports = require("a55a3b2a6378af0f");
 
-},{"5c2a2ce3b3fe1a03":"6YvXz"}],"6YvXz":[function(require,module,exports) {
+},{"a55a3b2a6378af0f":"6YvXz"}],"6YvXz":[function(require,module,exports) {
 /**
  * @license React
  * react.development.js
@@ -5820,7 +5820,7 @@ module.exports = require("5c2a2ce3b3fe1a03");
 
 },{}],"lOjBx":[function(require,module,exports) {
 "use strict";
-var m = require("a013e6a08084afe");
+var m = require("96db6e6679cead64");
 var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
 exports.createRoot = function(c, o) {
     i.usingClientEntryPoint = true;
@@ -5839,7 +5839,7 @@ exports.hydrateRoot = function(c, h, o) {
     }
 };
 
-},{"a013e6a08084afe":"j6uA9"}],"j6uA9":[function(require,module,exports) {
+},{"96db6e6679cead64":"j6uA9"}],"j6uA9":[function(require,module,exports) {
 "use strict";
 function checkDCE() {
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === "undefined" || typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.checkDCE !== "function") return;
@@ -5853,9 +5853,9 @@ function checkDCE() {
     // a false positive.
     throw new Error("^_^");
 }
-module.exports = require("5132a965ff71ae27");
+module.exports = require("36b31512c23a2bcc");
 
-},{"5132a965ff71ae27":"3iA9v"}],"3iA9v":[function(require,module,exports) {
+},{"36b31512c23a2bcc":"3iA9v"}],"3iA9v":[function(require,module,exports) {
 /**
  * @license React
  * react-dom.development.js
@@ -5868,8 +5868,8 @@ module.exports = require("5132a965ff71ae27");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("599e8f51d5770fc1");
-    var Scheduler = require("e05a76feb651441a");
+    var React = require("cac1cfa58e9ce1e3");
+    var Scheduler = require("f44c36194f9573ab");
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     var suppressWarning = false;
     function setSuppressWarning(newSuppressWarning) {
@@ -26840,11 +26840,11 @@ module.exports = require("5132a965ff71ae27");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"599e8f51d5770fc1":"21dqq","e05a76feb651441a":"juvHo"}],"juvHo":[function(require,module,exports) {
+},{"cac1cfa58e9ce1e3":"21dqq","f44c36194f9573ab":"juvHo"}],"juvHo":[function(require,module,exports) {
 "use strict";
-module.exports = require("26d96d680f4086e8");
+module.exports = require("19c1978db14372dd");
 
-},{"26d96d680f4086e8":"RqdIf"}],"RqdIf":[function(require,module,exports) {
+},{"19c1978db14372dd":"RqdIf"}],"RqdIf":[function(require,module,exports) {
 /**
  * @license React
  * scheduler.development.js
@@ -27355,7 +27355,7 @@ const Header = ()=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex items-center",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                    className: "flex space-x-4 items-center",
+                    className: "flex space-x-4 items-center mr-2",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                             className: "flex items-center space-x-2",
@@ -32201,9 +32201,9 @@ exports.export = function(dest, destName, get) {
 };
 
 },{}],"jifKP":[function(require,module,exports) {
-module.exports = require("26672733cfc440bf").getBundleURL("aXMci") + "foodvilla.ec7c9a5c.png" + "?" + Date.now();
+module.exports = require("2ef881a1f7b08526").getBundleURL("aXMci") + "foodvilla.ec7c9a5c.png" + "?" + Date.now();
 
-},{"26672733cfc440bf":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+},{"2ef881a1f7b08526":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -32262,7 +32262,7 @@ exports.default = UserContext;
 }
 },{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"km3Ru":[function(require,module,exports) {
 "use strict";
-var Refresh = require("4428c890e7aa6375");
+var Refresh = require("5ad7bb701301ed05");
 function debounce(func, delay) {
     var args;
     {
@@ -32394,7 +32394,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"4428c890e7aa6375":"786KC"}],"bdVon":[function(require,module,exports) {
+},{"5ad7bb701301ed05":"786KC"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
 // Because of that, the useSyncExternalStore compat shim is needed.
@@ -32416,9 +32416,9 @@ parcelHelpers.exportAll(_exports, exports);
 
 },{"use-sync-external-store/shim":"hyxdF","use-sync-external-store/shim/with-selector":"iDrhg","./utils/reactBatchedUpdates":"5K86X","./utils/batch":"ikw0G","./hooks/useSelector":"l3rFI","./components/connect":"5gOIw","./exports":"iAa1P","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hyxdF":[function(require,module,exports) {
 "use strict";
-module.exports = require("f5b2316a7ad3d0f6");
+module.exports = require("203499b4d5cce3e5");
 
-},{"f5b2316a7ad3d0f6":"khU3l"}],"khU3l":[function(require,module,exports) {
+},{"203499b4d5cce3e5":"khU3l"}],"khU3l":[function(require,module,exports) {
 /**
  * @license React
  * use-sync-external-store-shim.development.js
@@ -32431,7 +32431,7 @@ module.exports = require("f5b2316a7ad3d0f6");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("b06190f56d9d359c");
+    var React = require("bdda7536678d869f");
     var ReactSharedInternals = React.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
     function error(format) {
         for(var _len2 = arguments.length, args = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++)args[_key2 - 1] = arguments[_key2];
@@ -32583,11 +32583,11 @@ module.exports = require("f5b2316a7ad3d0f6");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"b06190f56d9d359c":"21dqq"}],"iDrhg":[function(require,module,exports) {
+},{"bdda7536678d869f":"21dqq"}],"iDrhg":[function(require,module,exports) {
 "use strict";
-module.exports = require("bb8bdcc87ce8318b");
+module.exports = require("f36fae8d4612fbbe");
 
-},{"bb8bdcc87ce8318b":"vU6Qe"}],"vU6Qe":[function(require,module,exports) {
+},{"f36fae8d4612fbbe":"vU6Qe"}],"vU6Qe":[function(require,module,exports) {
 /**
  * @license React
  * use-sync-external-store-shim/with-selector.development.js
@@ -32600,8 +32600,8 @@ module.exports = require("bb8bdcc87ce8318b");
 (function() {
     "use strict";
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStart(new Error());
-    var React = require("44518c5942cd42b3");
-    var shim = require("3b1a551be7aa6a27");
+    var React = require("e2b364f04de9773e");
+    var shim = require("d61f5b760eb2caac");
     /**
  * inlined Object.is polyfill to avoid requiring consumers ship their own
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
@@ -32705,7 +32705,7 @@ module.exports = require("bb8bdcc87ce8318b");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{"44518c5942cd42b3":"21dqq","3b1a551be7aa6a27":"hyxdF"}],"5K86X":[function(require,module,exports) {
+},{"e2b364f04de9773e":"21dqq","d61f5b760eb2caac":"hyxdF"}],"5K86X":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "unstable_batchedUpdates", ()=>(0, _reactDom.unstable_batchedUpdates));
@@ -33201,7 +33201,7 @@ exports.default = _objectWithoutPropertiesLoose;
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1GfsB":[function(require,module,exports) {
 "use strict";
-var reactIs = require("f5838ff36fcaec7e");
+var reactIs = require("f9c4893fde54f001");
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -33283,11 +33283,11 @@ function hoistNonReactStatics(targetComponent, sourceComponent, blacklist) {
 }
 module.exports = hoistNonReactStatics;
 
-},{"f5838ff36fcaec7e":"8V70c"}],"8V70c":[function(require,module,exports) {
+},{"f9c4893fde54f001":"8V70c"}],"8V70c":[function(require,module,exports) {
 "use strict";
-module.exports = require("57f29c6fd68c3954");
+module.exports = require("17c252154cf3de8f");
 
-},{"57f29c6fd68c3954":"drjfK"}],"drjfK":[function(require,module,exports) {
+},{"17c252154cf3de8f":"drjfK"}],"drjfK":[function(require,module,exports) {
 /** @license React v16.13.1
  * react-is.development.js
  *
@@ -33446,9 +33446,9 @@ module.exports = require("57f29c6fd68c3954");
 
 },{}],"7EuwB":[function(require,module,exports) {
 "use strict";
-module.exports = require("3de0a03177e5fc1");
+module.exports = require("85b5f954355baf75");
 
-},{"3de0a03177e5fc1":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+},{"85b5f954355baf75":"5DsXl"}],"5DsXl":[function(require,module,exports) {
 /**
  * @license React
  * react-is.development.js
@@ -55716,9 +55716,9 @@ const Body = ()=>{
     async function getRestaurants() {
         const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
-        console.log("data", json);
-        setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        // console.log("data", json);
+        setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
@@ -57541,7 +57541,7 @@ var _axiosErrorJsDefault = parcelHelpers.interopDefault(_axiosErrorJs);
 // temporary hotfix to avoid circular references until AxiosURLSearchParams is refactored
 var _formDataJs = require("../platform/node/classes/FormData.js");
 var _formDataJsDefault = parcelHelpers.interopDefault(_formDataJs);
-var Buffer = require("2947c7b04409c733").Buffer;
+var Buffer = require("faddb1ba139a106c").Buffer;
 "use strict";
 /**
  * Determines if the given thing is a array or js object.
@@ -57696,15 +57696,15 @@ const predicates = (0, _utilsJsDefault.default).toFlatObject((0, _utilsJsDefault
 }
 exports.default = toFormData;
 
-},{"2947c7b04409c733":"fCgem","../utils.js":"5By4s","../core/AxiosError.js":"3u8Tl","../platform/node/classes/FormData.js":"aFlee","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fCgem":[function(require,module,exports) {
+},{"faddb1ba139a106c":"fCgem","../utils.js":"5By4s","../core/AxiosError.js":"3u8Tl","../platform/node/classes/FormData.js":"aFlee","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fCgem":[function(require,module,exports) {
 /*!
  * The buffer module from node.js, for the browser.
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
  */ /* eslint-disable no-proto */ "use strict";
-var base64 = require("924017c70f3880ae");
-var ieee754 = require("f1afe91034f6137c");
+var base64 = require("2b19fea9f415c985");
+var ieee754 = require("d9f3ecacd569f5e3");
 var customInspectSymbol = typeof Symbol === "function" && typeof Symbol["for"] === "function" // eslint-disable-line dot-notation
  ? Symbol["for"]("nodejs.util.inspect.custom") // eslint-disable-line dot-notation
  : null;
@@ -58926,7 +58926,7 @@ var hexSliceLookupTable = function() {
     return table;
 }();
 
-},{"924017c70f3880ae":"eIiSV","f1afe91034f6137c":"cO95r"}],"eIiSV":[function(require,module,exports) {
+},{"2b19fea9f415c985":"eIiSV","d9f3ecacd569f5e3":"cO95r"}],"eIiSV":[function(require,module,exports) {
 "use strict";
 exports.byteLength = byteLength;
 exports.toByteArray = toByteArray;
@@ -61510,7 +61510,7 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var process = require("16c7c49fa236f3f1");
+var process = require("21bf9c69b082d279");
 var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
@@ -63559,7 +63559,7 @@ var autoBatchEnhancer = function(options) {
 // src/index.ts
 (0, _immer.enableES5)();
 
-},{"16c7c49fa236f3f1":"d5jf4","immer":"4sfoz","redux":"cDNB3","reselect":"isIsC","redux-thunk":"iFVTZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4sfoz":[function(require,module,exports) {
+},{"21bf9c69b082d279":"d5jf4","immer":"4sfoz","redux":"cDNB3","reselect":"isIsC","redux-thunk":"iFVTZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4sfoz":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Immer", ()=>un);
