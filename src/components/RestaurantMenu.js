@@ -15,9 +15,10 @@ const RestaurantMenu = () => {
 
   const restaurant = useRestaurant(resId);
 
-  console.log("menu", restaurant);
+  // console.log("menu", restaurant);
 
   const dispatch = useDispatch();
+
   const addFoodItem = (item) => {
     dispatch(addItem(item.card.info));
   };
