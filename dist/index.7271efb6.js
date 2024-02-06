@@ -55714,16 +55714,16 @@ const Body = ()=>{
         getRestaurants();
     }, []);
     async function getRestaurants() {
-        const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch("https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.675276800000006&lng=77.1588096&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
         console.log("data", json);
-        setAllRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-        setFilteredRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setAllRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+        setFilteredRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     }
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 32,
+        lineNumber: 33,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55744,7 +55744,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55756,13 +55756,13 @@ const Body = ()=>{
                             children: "Search"
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 40,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 34,
+                    lineNumber: 35,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55776,29 +55776,29 @@ const Body = ()=>{
                                     ...restaurant?.info
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 52,
+                                    lineNumber: 53,
                                     columnNumber: 19
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 51,
+                                lineNumber: 52,
                                 columnNumber: 17
                             }, undefined)
                         }, restaurant?.info.id, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 50,
+                            lineNumber: 51,
                             columnNumber: 18
                         }, undefined);
                     })
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 48,
+                    lineNumber: 49,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Body.js",
-            lineNumber: 33,
+            lineNumber: 34,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -55826,15 +55826,18 @@ const FETCH_MENU_URL = async (restaurantId)=>{
     try {
         const { data: { data: { cards  }  }  } = await (0, _axiosDefault.default)({
             method: "GET",
-            url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=${restaurantId}&submitAction=ENTER`
+            // url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=${restaurantId}`
+            url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=302514`
         });
+        console.log("rescard", cards);
         return cards;
     } catch (error) {
         throw new Error(error);
     }
 };
 _c = FETCH_MENU_URL;
-const IMG_CDN_URL = "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const IMG_CDN_URL = // "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 const restaurantList = [
     {
         type: "restaurant",
