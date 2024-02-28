@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 // import UserContext from "../utils/UserContext";
 
 function filterData(searchText, restaurants) {
+  // if (!searchText) return restaurants;
   const filterData = restaurants.filter((restaurant) =>
     restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
   );
@@ -20,7 +21,8 @@ const Body = () => {
 
   useEffect(() => {
     getRestaurants();
-  }, []);
+    filterData(searchText, allRestaurants);
+  }, [searchText]);
 
   async function getRestaurants() {
     const data = await fetch(

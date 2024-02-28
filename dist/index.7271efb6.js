@@ -55701,6 +55701,7 @@ var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 // import UserContext from "../utils/UserContext";
 function filterData(searchText, restaurants) {
+    // if (!searchText) return restaurants;
     const filterData = restaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
     return filterData;
 }
@@ -55712,7 +55713,10 @@ const Body = ()=>{
     // const { user, setUser } = useContext(UserContext);
     (0, _react.useEffect)(()=>{
         getRestaurants();
-    }, []);
+        filterData(searchText, allRestaurants);
+    }, [
+        searchText
+    ]);
     async function getRestaurants() {
         const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6508353&lng=77.267595&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
         const json = await data.json();
@@ -55723,7 +55727,7 @@ const Body = ()=>{
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 34,
+        lineNumber: 36,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55744,7 +55748,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 37,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55756,13 +55760,13 @@ const Body = ()=>{
                             children: "Search"
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 42,
+                            lineNumber: 44,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 36,
+                    lineNumber: 38,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55776,29 +55780,29 @@ const Body = ()=>{
                                     ...restaurant?.info
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 54,
+                                    lineNumber: 56,
                                     columnNumber: 19
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 53,
+                                lineNumber: 55,
                                 columnNumber: 17
                             }, undefined)
                         }, restaurant?.info.id, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 52,
+                            lineNumber: 54,
                             columnNumber: 18
                         }, undefined);
                     })
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 50,
+                    lineNumber: 52,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Body.js",
-            lineNumber: 35,
+            lineNumber: 37,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
@@ -61512,8 +61516,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("47f78574de65d0d8");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
