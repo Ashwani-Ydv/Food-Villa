@@ -15,7 +15,7 @@ const RestaurantMenu = () => {
 
   const restaurant = useRestaurant(resId);
 
-  // console.log("menu", restaurant);
+  console.log("menu", restaurant);
 
   const dispatch = useDispatch();
 
@@ -34,32 +34,32 @@ const RestaurantMenu = () => {
         <img
           className="h-40 rounded-lg shadow-md"
           src={
-            IMG_CDN_URL + restaurant.cards[2].card.card.info.cloudinaryImageId
+            IMG_CDN_URL + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
           }
         />
         <div className="ml-5 flex flex-col justify-between">
           <div>
             <h1 className="font-semibold text-2xl mb-2">
-                {restaurant.cards[2].card.card.info.name}
+                {restaurant?.cards[0]?.card?.card?.info?.name}
             </h1>
             <p className="text-sm text-gray-600 mb-2">
-                {restaurant.cards[2].card.card.info.cuisines.join(", ")}
+                {restaurant?.cards[0]?.card?.card?.info?.cuisines.join(", ")}
             </p>
             <div className="flex items-center text-sm">
               <span
                 className={`px-2 py-1 rounded-full text-white ${
-                    restaurant.cards[2].card.card.info.avgRating >= 4
+                    restaurant?.cards[0]?.card?.card?.info?.avgRating >= 4
                     ? "bg-green-500"
                     : "bg-orange-500"
                 }`}
               >
-                  ☆ {restaurant.cards[2].card.card.info.avgRating}
+                  ☆ {restaurant?.cards[0]?.card?.card?.info?.avgRating}
               </span>
               <h3 className="ml-4">
-                  {restaurant.cards[2].card.card.info.sla.slaString}
+                  {restaurant?.cards[0]?.card?.card?.info?.sla?.slaString}
               </h3>
               <h3 className="ml-4">
-                  {restaurant.cards[2].card.card.info.costForTwoMessage}
+                  {restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}
               </h3>
             </div>
           </div>
@@ -67,30 +67,30 @@ const RestaurantMenu = () => {
       </div>
 
       {/* Menu Items */}
-        {restaurant?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
+        {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
         (item) => {
           const cartItem = cartItems.find(
-            (cartItem) => cartItem.id === item.card.info.id
+            (cartItem) => cartItem.id === item?.card?.info?.id
           );
           return (
             <div
-              key={item.card.info.id}
+              key={item?.card?.info?.id}
               className="flex justify-between p-4 border-b border-gray-200 hover:bg-gray-50 transition-colors"
             >
               <div>
                 <h1 className="text-lg font-semibold mb-2">
-                  {item.card.info.name}
+                  {item?.card?.info?.name}
                 </h1>
                 <p className="text-gray-600">
                   ₹{" "}
-                  {item.card.info.price / 100 ||
-                    item.card.info.defaultPrice / 100}
+                  {item?.card?.info?.price / 100 ||
+                    item?.card?.info?.defaultPrice / 100}
                 </p>
               </div>
               <div className="items-center">
                 <img
                   className="w-29 h-28 rounded-lg shadow-md mr-4"
-                  src={IMG_CDN_URL + item.card.info.imageId}
+                  src={IMG_CDN_URL + item?.card?.info?.imageId}
                 />
                 <div className="flex justify-center mt-2">
                   {cartItem ? (
