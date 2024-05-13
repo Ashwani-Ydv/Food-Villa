@@ -55830,7 +55830,7 @@ const FETCH_MENU_URL = async (restaurantId)=>{
     try {
         const { data: { data: { cards  }  }  } = await (0, _axiosDefault.default)({
             method: "GET",
-            url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=${restaurantId}`
+            url: `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.2958104&lng=76.6393805&restaurantId=${restaurantId}`
         });
         console.log("rescard", cards);
         return cards;
@@ -61080,7 +61080,7 @@ const RestaurantMenu = ()=>{
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                         className: "h-40 rounded-lg shadow-md",
-                        src: (0, _config.IMG_CDN_URL) + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+                        src: (0, _config.IMG_CDN_URL) + restaurant?.cards[2]?.card?.card?.info?.cloudinaryImageId
                     }, void 0, false, {
                         fileName: "src/components/RestaurantMenu.js",
                         lineNumber: 26,
@@ -61092,7 +61092,7 @@ const RestaurantMenu = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                                     className: "font-semibold text-2xl mb-2",
-                                    children: restaurant?.cards[0]?.card?.card?.info?.name
+                                    children: restaurant?.cards[2]?.card?.card?.info?.name
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 29,
@@ -61100,7 +61100,7 @@ const RestaurantMenu = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     className: "text-sm text-gray-600 mb-2",
-                                    children: restaurant?.cards[0]?.card?.card?.info?.cuisines.join(", ")
+                                    children: restaurant?.cards[2]?.card?.card?.info?.cuisines.join(", ")
                                 }, void 0, false, {
                                     fileName: "src/components/RestaurantMenu.js",
                                     lineNumber: 32,
@@ -61110,10 +61110,10 @@ const RestaurantMenu = ()=>{
                                     className: "flex items-center text-sm",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                            className: `px-2 py-1 rounded-full text-white ${restaurant?.cards[0]?.card?.card?.info?.avgRating >= 4 ? "bg-green-500" : "bg-orange-500"}`,
+                                            className: `px-2 py-1 rounded-full text-white ${restaurant?.cards[2]?.card?.card?.info?.avgRating >= 4 ? "bg-green-500" : "bg-orange-500"}`,
                                             children: [
                                                 "☆ ",
-                                                restaurant?.cards[0]?.card?.card?.info?.avgRating
+                                                restaurant?.cards[2]?.card?.card?.info?.avgRating
                                             ]
                                         }, void 0, true, {
                                             fileName: "src/components/RestaurantMenu.js",
@@ -61122,7 +61122,7 @@ const RestaurantMenu = ()=>{
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                             className: "ml-4",
-                                            children: restaurant?.cards[0]?.card?.card?.info?.sla?.slaString
+                                            children: restaurant?.cards[2]?.card?.card?.info?.sla?.slaString
                                         }, void 0, false, {
                                             fileName: "src/components/RestaurantMenu.js",
                                             lineNumber: 39,
@@ -61130,7 +61130,7 @@ const RestaurantMenu = ()=>{
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                             className: "ml-4",
-                                            children: restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage
+                                            children: restaurant?.cards[2]?.card?.card?.info?.costForTwoMessage
                                         }, void 0, false, {
                                             fileName: "src/components/RestaurantMenu.js",
                                             lineNumber: 42,

@@ -34,32 +34,32 @@ const RestaurantMenu = () => {
         <img
           className="h-40 rounded-lg shadow-md"
           src={
-            IMG_CDN_URL + restaurant?.cards[0]?.card?.card?.info?.cloudinaryImageId
+            IMG_CDN_URL + restaurant?.cards[2]?.card?.card?.info?.cloudinaryImageId
           }
         />
         <div className="ml-5 flex flex-col justify-between">
           <div>
             <h1 className="font-semibold text-2xl mb-2">
-                {restaurant?.cards[0]?.card?.card?.info?.name}
+                {restaurant?.cards[2]?.card?.card?.info?.name}
             </h1>
             <p className="text-sm text-gray-600 mb-2">
-                {restaurant?.cards[0]?.card?.card?.info?.cuisines.join(", ")}
+                {restaurant?.cards[2]?.card?.card?.info?.cuisines.join(", ")}
             </p>
             <div className="flex items-center text-sm">
               <span
                 className={`px-2 py-1 rounded-full text-white ${
-                    restaurant?.cards[0]?.card?.card?.info?.avgRating >= 4
+                    restaurant?.cards[2]?.card?.card?.info?.avgRating >= 4
                     ? "bg-green-500"
                     : "bg-orange-500"
                 }`}
               >
-                  ☆ {restaurant?.cards[0]?.card?.card?.info?.avgRating}
+                  ☆ {restaurant?.cards[2]?.card?.card?.info?.avgRating}
               </span>
               <h3 className="ml-4">
-                  {restaurant?.cards[0]?.card?.card?.info?.sla?.slaString}
+                  {restaurant?.cards[2]?.card?.card?.info?.sla?.slaString}
               </h3>
               <h3 className="ml-4">
-                  {restaurant?.cards[0]?.card?.card?.info?.costForTwoMessage}
+                  {restaurant?.cards[2]?.card?.card?.info?.costForTwoMessage}
               </h3>
             </div>
           </div>
