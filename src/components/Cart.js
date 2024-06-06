@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import FoodItem from "./FoodItem";
 import { IMG_CDN_URL } from "../config";
+import resImg from '../assets/img/resImage.avif'
+import emptyCart from '../assets/img/emptyCart.png'
 import { addItem, clearCart, removeItem } from "../utils/cartSlice";
 
 const Cart = () => {
@@ -63,7 +65,8 @@ const Cart = () => {
                 <div className="flex items-center space-x-4">
                   <img
                     className="w-16 h-16 rounded-md"
-                    src={IMG_CDN_URL + item.imageId}
+                    // src={IMG_CDN_URL + item.imageId}
+                    src={resImg}
                     alt={item.name}
                   />
                   <div>
@@ -98,7 +101,8 @@ const Cart = () => {
         <div className="flex flex-col items-center mt-10 space-y-2">
           <div className=" flex flex-col items-center h-2/3 w-2/3">
             <img
-              src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
+                // src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0"
+                src={emptyCart}
               alt="empty cart"
               className="w-1/3"
             />

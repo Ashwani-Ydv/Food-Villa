@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../config";
+import resImg from "../assets/img/resImage.avif";
 import useRestaurant from "../utils/useRestaurant";
 import MenuShimmer from "./MenuShimmer";
 import { addItem, clearCart, removeItem } from "../utils/cartSlice";
@@ -34,32 +35,32 @@ const RestaurantMenu = () => {
         <img
           className="h-40 rounded-lg shadow-md"
           src={
-            IMG_CDN_URL + restaurant?.cards[2]?.card?.card?.info?.cloudinaryImageId
+            IMG_CDN_URL + restaurant?.data?.cards[2]?.card?.card?.info?.cloudinaryImageId
           }
         />
         <div className="ml-5 flex flex-col justify-between">
           <div>
             <h1 className="font-semibold text-2xl mb-2">
-                {restaurant?.cards[2]?.card?.card?.info?.name}
+                {restaurant?.data?.cards[2]?.card?.card?.info?.name}
             </h1>
             <p className="text-sm text-gray-600 mb-2">
-                {restaurant?.cards[2]?.card?.card?.info?.cuisines.join(", ")}
+                {restaurant?.data?.cards[2]?.card?.card?.info?.cuisines.join(", ")}
             </p>
             <div className="flex items-center text-sm">
               <span
                 className={`px-2 py-1 rounded-full text-white ${
-                    restaurant?.cards[2]?.card?.card?.info?.avgRating >= 4
+                    restaurant?.data?.cards[2]?.card?.card?.info?.avgRating >= 4
                     ? "bg-green-500"
                     : "bg-orange-500"
                 }`}
               >
-                  ☆ {restaurant?.cards[2]?.card?.card?.info?.avgRating}
+                  ☆ {restaurant?.data?.cards[2]?.card?.card?.info?.avgRating}
               </span>
               <h3 className="ml-4">
-                  {restaurant?.cards[2]?.card?.card?.info?.sla?.slaString}
+                  {restaurant?.data?.cards[2]?.card?.card?.info?.sla?.slaString}
               </h3>
               <h3 className="ml-4">
-                  {restaurant?.cards[2]?.card?.card?.info?.costForTwoMessage}
+                  {restaurant?.data?.cards[2]?.card?.card?.info?.costForTwoMessage}
               </h3>
             </div>
           </div>
@@ -67,7 +68,7 @@ const RestaurantMenu = () => {
       </div>
 
       {/* Menu Items */}
-        {restaurant?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
+        {restaurant?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards?.map(
         (item) => {
           const cartItem = cartItems.find(
             (cartItem) => cartItem.id === item?.card?.info?.id
@@ -90,7 +91,8 @@ const RestaurantMenu = () => {
               <div className="items-center">
                 <img
                   className="w-29 h-28 rounded-lg shadow-md mr-4"
-                  src={IMG_CDN_URL + item?.card?.info?.imageId}
+                  // src={IMG_CDN_URL + item?.card?.info?.imageId}
+                  src={resImg}
                 />
                 <div className="flex justify-center mt-2">
                   {cartItem ? (

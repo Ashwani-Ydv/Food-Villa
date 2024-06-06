@@ -8,10 +8,10 @@ export const FETCH_MENU_URL = async (restaurantId) => {
       },
     } = await axios({
       method: "GET",
-      url: `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.2958104&lng=76.6393805&restaurantId=${restaurantId}`,
+      // url: `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.2958104&lng=76.6393805&restaurantId=${restaurantId}`,
       // url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=${restaurantId}`
 
-      // url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=302514`
+      url: `https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=31.2668695&lng=75.70225669999999&catalog_qa=undefined&submitAction=ENTER&restaurantId=302514`
     });
     console.log('rescard', cards);
     return cards;

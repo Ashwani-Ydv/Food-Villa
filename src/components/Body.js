@@ -3,6 +3,7 @@ import { RestrauntList } from "../config";
 import RestrauntCard from "./RestraurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import mockData from '../mock/data'
 // import UserContext from "../utils/UserContext";
 
 function filterData(searchText, restaurants) {
@@ -25,21 +26,24 @@ const Body = () => {
   }, [searchText]);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.2958104&lng=76.6393805&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6508353&lng=77.267595&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.675276800000006&lng=77.1588096&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-      // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
-      // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.424405572480765&lng=77.03483765383623&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+    // // const targetUrl = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.2958104&lng=76.6393805&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+    // const targetUrl = 'https://www.swiggy.com/collections/83645?collection_id=83645&search_context=northindian&tags=layout_CCS_NorthIndian&type=rcv2';
+    // const data = await fetch(proxyUrl + targetUrl
+    //   // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6508353&lng=77.267595&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    //   // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.675276800000006&lng=77.1588096&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    //   // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.591945&lng=73.73897649999999&page_type=DESKTOP_WEB_LISTING"
+    //   // "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.424405572480765&lng=77.03483765383623&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    // );
 
-    const json = await data.json();
-    console.log("data", json);
+    console.log("mockData", mockData);
+    // const json = await data.json();
+    // console.log("data", json);
     setAllRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      mockData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      mockData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
   if (!allRestaurants) return null;
