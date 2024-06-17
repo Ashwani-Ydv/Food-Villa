@@ -9,7 +9,7 @@ import mockData from '../mock/data'
 function filterData(searchText, restaurants) {
   // if (!searchText) return restaurants;
   const filterData = restaurants.filter((restaurant) =>
-    restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase())
+    restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase())
   );
   return filterData;
 }
@@ -22,8 +22,13 @@ const Body = () => {
 
   useEffect(() => {
     getRestaurants();
-    filterData(searchText, allRestaurants);
-  }, [searchText]);
+  }, []);
+
+  useEffect(() => {
+    const data = filterData(searchText, allRestaurants);
+    setFilteredRestaurants(data);
+  }, [searchText, allRestaurants]);
+
 
   async function getRestaurants() {
     // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';

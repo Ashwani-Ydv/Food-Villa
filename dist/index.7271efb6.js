@@ -55704,7 +55704,7 @@ var _s = $RefreshSig$();
 // import UserContext from "../utils/UserContext";
 function filterData(searchText, restaurants) {
     // if (!searchText) return restaurants;
-    const filterData = restaurants.filter((restaurant)=>restaurant?.info?.name?.toLowerCase()?.includes(searchText.toLowerCase()));
+    const filterData = restaurants.filter((restaurant)=>restaurant?.info?.name.toLowerCase().includes(searchText.toLowerCase()));
     return filterData;
 }
 const Body = ()=>{
@@ -55715,9 +55715,13 @@ const Body = ()=>{
     // const { user, setUser } = useContext(UserContext);
     (0, _react.useEffect)(()=>{
         getRestaurants();
-        filterData(searchText, allRestaurants);
+    }, []);
+    (0, _react.useEffect)(()=>{
+        const data = filterData(searchText, allRestaurants);
+        setFilteredRestaurants(data);
     }, [
-        searchText
+        searchText,
+        allRestaurants
     ]);
     async function getRestaurants() {
         // const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
@@ -55738,7 +55742,7 @@ const Body = ()=>{
     if (!allRestaurants) return null;
     return allRestaurants?.length === 0 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _shimmerDefault.default), {}, void 0, false, {
         fileName: "src/components/Body.js",
-        lineNumber: 42,
+        lineNumber: 45,
         columnNumber: 41
     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55759,7 +55763,7 @@ const Body = ()=>{
                             }
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 45,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -55771,13 +55775,13 @@ const Body = ()=>{
                             children: "Search"
                         }, void 0, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 50,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 44,
+                    lineNumber: 47,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -55791,34 +55795,34 @@ const Body = ()=>{
                                     ...restaurant?.info
                                 }, void 0, false, {
                                     fileName: "src/components/Body.js",
-                                    lineNumber: 62,
+                                    lineNumber: 65,
                                     columnNumber: 19
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/components/Body.js",
-                                lineNumber: 61,
+                                lineNumber: 64,
                                 columnNumber: 17
                             }, undefined)
                         }, restaurant?.info.id, false, {
                             fileName: "src/components/Body.js",
-                            lineNumber: 60,
+                            lineNumber: 63,
                             columnNumber: 18
                         }, undefined);
                     })
                 }, void 0, false, {
                     fileName: "src/components/Body.js",
-                    lineNumber: 58,
+                    lineNumber: 61,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/components/Body.js",
-            lineNumber: 43,
+            lineNumber: 46,
             columnNumber: 7
         }, undefined)
     }, void 0, false);
 };
-_s(Body, "3F3rwFOxzaKISeKb+aCNHb8+1FU=");
+_s(Body, "ydYMYhjqUKmwHwtrJmTLToPeXiM=");
 _c = Body;
 exports.default = Body;
 var _c;
@@ -55829,7 +55833,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config":"jtCLN","./RestraurantCard":"7wtFA","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../mock/data":"dDCPM"}],"jtCLN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../config":"jtCLN","./RestraurantCard":"7wtFA","./Shimmer":"g6ZGj","react-router-dom":"9xmpe","../mock/data":"dDCPM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jtCLN":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "FETCH_MENU_URL", ()=>FETCH_MENU_URL);
@@ -71262,7 +71266,10 @@ $RefreshReg$(_c, "RestaurantMenu");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../config":"jtCLN","../utils/useRestaurant":"ewgpj","./MenuShimmer":"iDrec","../utils/cartSlice":"5RXlr","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../assets/img/resImage.avif":"bXeOQ"}],"ewgpj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../config":"jtCLN","../assets/img/resImage.avif":"bXeOQ","../utils/useRestaurant":"ewgpj","./MenuShimmer":"iDrec","../utils/cartSlice":"5RXlr","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bXeOQ":[function(require,module,exports) {
+module.exports = require("48c90078d4c5cb47").getBundleURL("aXMci") + "resImage.c801bc0f.avif" + "?" + Date.now();
+
+},{"48c90078d4c5cb47":"lgJ39"}],"ewgpj":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5009 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -71301,7 +71308,7 @@ exports.default = useRestaurant;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../config":"jtCLN","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../mock/data ":"dDCPM"}],"iDrec":[function(require,module,exports) {
+},{"react":"21dqq","../config":"jtCLN","../mock/data ":"dDCPM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iDrec":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c91b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -75313,10 +75320,7 @@ var thunk = createThunkMiddleware(); // Attach the factory function so users can
 thunk.withExtraArgument = createThunkMiddleware;
 exports.default = thunk;
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bXeOQ":[function(require,module,exports) {
-module.exports = require("48c90078d4c5cb47").getBundleURL("aXMci") + "resImage.c801bc0f.avif" + "?" + Date.now();
-
-},{"48c90078d4c5cb47":"lgJ39"}],"h8J3U":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"h8J3U":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ad24 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -75638,7 +75642,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","react-router-dom":"9xmpe","./FoodItem":"9xltm","../config":"jtCLN","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../assets/img/resImage.avif":"bXeOQ","../assets/img/emptyCart.png":"dk1VE"}],"9xltm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","react-router-dom":"9xmpe","./FoodItem":"9xltm","../config":"jtCLN","../assets/img/resImage.avif":"bXeOQ","../assets/img/emptyCart.png":"dk1VE","../utils/cartSlice":"5RXlr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9xltm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8f2a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
